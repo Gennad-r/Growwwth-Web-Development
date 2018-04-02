@@ -29,6 +29,27 @@
 	.top-nav
 		.nav-list
 			display: none
+			flex-direction: column
+			position: absolute
+			z-index: 19
+			top: 90px
+			left: 0
+			width: 100vw
+			height: 100vh
+			background-color: rgba(#fff, 0.9)
+			padding: 1rem
+
+			font-size: 2rem
+			ul
+				flex-direction: column
+			.has-child
+				>ul
+					display: block
+					position: static
+					padding-left: 15px
+					background-color: transparent
+	.hamburger-box
+		display: block
 // ≥768px
 +media-breakpoint-down(sm)
 	.popup-body
