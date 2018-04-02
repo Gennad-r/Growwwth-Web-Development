@@ -3,17 +3,52 @@
 
 /*==========  Desktop First  ==========*/
 
+
 // ≥1200px
 +media-breakpoint-down(lg)
-
+	.last-post-item
+		flex-direction: column
+		margin-bottom: 2rem
+		.img-thumb
+			max-width: 100%
+			img
+				width: 100%
 // ≥992px
 +media-breakpoint-down(md)
-
+	.top-nav, .lastest-posts, footer.footer
+		padding-right: 0
+		padding-left: 0
+	.nav-list
+		ul
+			justify-content: space-between
+			li
+				margin: 0 0 15px
+		margin-bottom: 30px
+	.social
+		text-align: center
+	.top-nav
+		.nav-list
+			display: none
 // ≥768px
 +media-breakpoint-down(sm)
+	.popup-body
+		.popup-image
+			display: none
+		.form-body
+			flex-basis: 100%
+	.nav-list
+		ul
+			flex-direction: column
+	.slide-name
+		font-size: 3rem
+		line-height: 3rem
 
 // ≥576px
 +media-breakpoint-down(xs)
+	.slide-name
+		font-size: 2rem
+		line-height: 2rem
+
 
 
 /*==========  Mobile First  ==========*/
@@ -29,3 +64,5 @@
 
 // ≤1200px
 +media-breakpoint-up(xl)
+
+

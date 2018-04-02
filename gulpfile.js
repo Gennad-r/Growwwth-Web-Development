@@ -21,7 +21,7 @@ gulp.task('browser-sync', function() {
 		// open: false,
 		// tunnel: true,
 		// tunnel: "projectname", //Demonstration page: http://projectname.localtunnel.me
-	})
+	});
 });
 
 gulp.task('styles', function() {
@@ -31,18 +31,20 @@ gulp.task('styles', function() {
 	.pipe(autoprefixer(['last 15 versions']))
 	.pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
 	.pipe(gulp.dest('app/css'))
-	.pipe(browsersync.reload( {stream: true} ))
+	.pipe(browsersync.reload( {stream: true} ));
 });
 
 gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
+		'node_modules/owl.carousel/dist/owl.carousel.min.js',
+		'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
 	// .pipe(uglify()) // Mifify js (opt.)
 	.pipe(gulp.dest('app/js'))
-	.pipe(browsersync.reload({ stream: true }))
+	.pipe(browsersync.reload({ stream: true }));
 });
 
 gulp.task('rsync', function() {

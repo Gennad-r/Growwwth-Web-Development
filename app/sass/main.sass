@@ -28,6 +28,10 @@ body
 			border-color: red
 		&:required:valid
 			border-color: green
+body.freez
+	overflow: hidden
+
+
 .img-responsive
 	display: block
 	max-width: 100%
@@ -37,6 +41,8 @@ body
 
 .text-center
 	text-align: center
+.text-right
+	text-align: right
 
 // main typography
 h2
@@ -44,14 +50,147 @@ h2
 	text-transform: uppercase
 	font-weight: 400
 	text-align: left
-	margin-bottom: 40px
+	margin-bottom: 2.9rem
 h3
 	font-size: 1.3rem
 	font-weight: 500
 	color: darken($base, 8%)
+	margin: 2.9rem 0 1.45rem
 p
 	font-weight: 300
+	margin-bottom: 3rem
+
+blockquote
+	margin: 3rem 0
+	border-top: 1px solid lighten($base, 70%)
+	border-bottom: 1px solid lighten($base, 70%)
+	p
+		font-family: 'Libre Baskerville', serif
+		font-style: italic
+		font-weight: 400
+		padding-left: 70px
+		margin: 3rem 0 2rem
+		font-size: 1.15rem
+	> p
+		position: relative
+		&:before
+			content: '“'
+			font-style: normal
+			font-weight: 400
+			position: absolute
+			font-size: 80px
+			line-height: 80px
+			color: $accent
+			top: 0
+			left: 0
+	footer
+		text-align: right
+		margin-bottom: 2.5rem
+		cite
+			font-style: normal
+			color: lighten($base, 25%)
+			position: relative
+			&:before
+				content: ""
+				position: absolute
+				display: block
+				width: 40px
+				height: 1px
+				left: -60px
+				top: 0.5rem
+				background-color: lighten($base, 25%)
+
+table
+	width: 100%
+	max-width: 100%
+	border-collapse: collapse
+	border: 1px solid lighten($base, 70%)
+	margin-bottom: 3rem
+	thead
+		vertical-align: middle
+		font-size: 0.86rem
+		border-bottom: 1px solid lighten($base, 70%)
+		th
+			font-weight: 400
+	th, td
+		padding: 1rem 
+	tbody
+		vertical-align: bottom
+		tr:nth-of-type(even)
+			background-color: lighten($base, 78%)
+
+
 // main typography
+
+// contact form
+
+.contact-form-holder
+	background-color: rgba(#fff, 0.7)
+	position: fixed
+	display: flex
+	width: 100vw
+	height: 100vh
+	z-index: 15
+	top: 0
+	left: 0
+	justify-content: center
+	align-items: center
+	padding: 15px
+	display: none
+.popup-body
+	flex-basis: 770px
+	display: flex
+	box-shadow: lighten($base, 50%) 0 0 5px
+	background-color: #fff
+	.popup-image
+		background-image: url('../img/contact-form-image.jpg')
+		background-size: cover
+		background-repeat: no-repeat
+		min-height: 15px
+		flex-basis: 45%
+	.form-body
+		flex-basis: 55%
+		padding: 1rem
+	.close-form
+		font-family: 'Libre Baskerville', serif
+		font-size: 3rem
+		line-height: 1rem
+		color: lighten($base, 30%)
+		cursor: pointer
+	.form-head
+		font-size: 1.7rem
+		margin-bottom: 4rem
+	.input-line
+		width: 100%
+		border: none
+		border-bottom: 1px solid lighten($base, 30%)
+		text-transform: uppercase
+		padding: 6px 0
+		font-size: 0.85rem
+		margin-bottom: 2rem
+	.input-holder
+		label
+			text-transform: uppercase
+			font-size: 0.85rem
+			width: 100%
+		textarea
+			display: block
+			resize: none
+			width: 100%
+			border: none
+			padding: 0
+			border-bottom: 1px solid lighten($base, 30%)
+	.popup-btn
+		color: $base
+		text-transform: uppercase
+		background-color: $accent
+		border: none
+		border-radius: 50px
+		padding: 8px 50px
+		font-size: 1.15rem
+		margin-top: 2rem
+		&:focus
+			outline: none
 
 //icons
 .icon:before
@@ -78,34 +217,81 @@ p
 
 .logo-holder
 	width: 83px
-
+.top-nav, .lastest-posts, footer.footer
+	padding-right: 40px
+	padding-left: 40px
 .top-nav
 	justify-content: space-between
 	align-content: center
-	padding: 33px 40px
-	p
+	padding-top: 33px
+	padding-bottom: 33px
 	.nav-list
-		ul
-			display: flex
-			flex-direction: row
-			list-style: none
-			padding: 0
-			margin: 0
-			li
-				margin-right: 56px
+		margin-top: 5px
+.nav-list
+	margin-top: 5px
+	ul
+		display: flex
+		flex-direction: row
+		list-style: none
+		padding: 0
+		margin: 0
+		li
+			margin-right: 56px
+	a
+		text-transform: uppercase
+		color: lighten($base, 14%)
+		transition: color .3s
+		&:hover
+			text-decoration: none
+			color: lighten($base, 70%)
+	.search
+		padding-left: 56px
+		margin-right: 0	
+		border-left: 1px solid lighten($base, 70%)
 		a
-			text-transform: uppercase
-			color: lighten($base, 14%)
-			transition: color .3s
-			&:hover
-				text-decoration: none
-				color: lighten($base, 70%)
-		.search
-			padding-left: 56px
-			border-left: 1px solid lighten($base, 70%)
-			a
-				font-size: 20px
-				line-height: 1.7rem
+			font-size: 20px
+			line-height: 1.7rem
+	.has-child
+		position: relative
+		padding-right: 15px
+		padding-left: 10px
+		&:after
+			position: absolute
+			content: ""
+			display: block
+			top: 50%
+			transform: translateY(-50%)
+			right: 0
+			width: 0px
+			height: 0px
+			border-bottom: 4px solid transparent
+			border-left: 4px solid transparent
+			border-right: 4px solid transparent
+			border-top: 4px solid $accent
+		>ul
+			display: none
+			position: absolute
+			left: 0
+			padding: 10px
+			z-index: 10
+			flex-direction: column
+			background-color: #fff
+			min-width: 100%
+			li
+				margin-right: 0
+				border-bottom: 1px solid lighten($base, 70%)
+				padding: 5px 0
+				white-space: nowrap
+				&:last-child
+					padding-bottom: 0
+					border-bottom: none
+		&:hover
+			>ul
+				display: block
+
+
+
+
 // slider
 
 .slide
@@ -129,7 +315,109 @@ p
 		font-size: 5.15rem
 		line-height: 5.15rem
 
-		
+//slider
+
+.table-holder
+	white-space: nowrap
+	overflow: auto
+
+
+// last posts 
+.lastest-posts
+	padding-top: 70px
+	margin-top: 75px
+	border-top: 1px solid lighten($base, 70%)
+.last-post-head
+	font-size: 1.7rem
+	text-transform: uppercase
+	font-weight: 500
+	text-align: center
+	margin-bottom: 50px
+.last-post-item
+	box-shadow: lighten($base, 50%) 0 0 5px
+	margin-bottom: 1rem
+	.img-thumb
+		max-width: 185px
+		flex: 1 1 50%
+		overflow: hidden
+		img
+			transform-origin: center
+			transition: 0.5s
+		a:hover
+			img
+				transform: scale(1.05, 1.05)
+				opacity: 0.7
+	.text-thumb
+		flex: 1 1 50% 
+		padding: 1.2rem
+		flex-direction: column
+		justify-content: space-between
+		.post-category
+			text-transform: uppercase
+			font-size: 0.85rem
+			margin-bottom: 0.8rem
+			color: lighten($base, 40%)
+		.post-title
+			color: darken($base, 8%)
+			font-weight: 400
+			font-size: 1.15rem
+			line-height: 1.43rem
+			letter-spacing: -0.16px
+			margin-bottom: 0.8rem
+			overflow: hidden
+			max-height: 80px
+		.more
+			display: block
+			color: darken($base, 8%)
+			text-transform: uppercase
+			transition: color .3s
+			.icon
+				font-size: 0.8rem
+				display: inline-block
+				transition: 0.3s
+			&:hover
+				text-decoration: none
+				color: lighten($base, 40%)
+				.icon
+					margin-left: 3px
+// footer
+
+footer.footer
+	padding-top: 40px
+	border-top: 1px solid lighten($base, 70%)
+	margin-top: 70px
+	padding-bottom: 30px
+	.copyright
+		text-align: right
+		color: lighten($base, 40%)
+		margin-top: 38px
+	.footer-top
+		justify-content: space-between
+.social-link
+	display: inline-block
+	position: relative
+	width: 40px
+	height: 40px
+	color: $base
+	border: 2px solid lighten($base, 60%)
+	border-radius: 50%
+	transition: 0.3s
+	margin-left: 1rem
+	font-size: 1.5rem
+	&.icon-houzz
+		font-size: 2rem
+	&:first-child
+		margin-left: 0
+	&:before
+		display: block
+		position: absolute
+		left: 50%
+		top: 50%
+		transform-origin: center
+		transform: translate(-50%, -50%)
+	&:hover
+		color: lighten($base, 70%)
+		border-color: lighten($base, 70%)
 
 
 

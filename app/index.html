@@ -17,12 +17,43 @@
 	<meta name="theme-color" content="#ffda2b">
 	<!-- Custom Browsers Color End -->
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i&amp;subset=latin-ext" rel="stylesheet">
 	<link rel="stylesheet" href="css/main.min.css">
 
 </head>
 
 <body>
+	<div class="contact-form-holder">
+		<div class="popup-body">
+			<div class="popup-image"></div>
+			<div class="form-body">
+				<div class="input-holder text-right"><span class="close-form">&times;</span></div>
+				<div class="form-head">Contact Us</div>
+				<form>
+					<div class="input-holder">
+						<input type="text" required class="input-line" id="name" placeholder="Name">
+					</div>
+					
+					<div class="input-holder">
+						<input type="phone" required class="input-line" id="phone" placeholder="Phone">
+					</div>
+					
+					<div class="input-holder">
 
+						<input type="email" required class="input-line" id="email" placeholder="Email">
+					</div>
+					<div class="input-holder">
+						<label> Message
+							<textarea name="message" id="message" cols="30" rows="2"></textarea>
+						</label>
+					</div>
+
+					
+					<button type="submit" class="popup-btn">Send</button>
+				</form>
+			</div>
+		</div>
+	</div>
 	<header>
 		<div class="container-fluid">
 			<div class="row">
@@ -31,11 +62,16 @@
 						<div class="logo-holder"><a href="#"><img class="img-responsive" src="img/logo.svg" alt="logo"></a></div>
 						<div class="nav-list">
 							<ul>
-								<li class="has-child"><a href="#">About</a></li>
+								<li class="has-child"><a href="#">About</a>
+									<ul>
+										<li><a href="#">Item long 1</a></li>
+										<li><a href="#">Item 2</a></li>
+									</ul>
+								</li>
 								<li><a href="#">Guides</a></li>
 								<li><a href="#">community</a></li>
 								<li><a href="#">resources</a></li>
-								<li><a href="#">Contact us</a></li>
+								<li><a class="contact-us" href="#">Contact us</a></li>
 								<li class="search"><a class="icon icon-search" href="#"></a></li>
 							</ul>
 						</div>
@@ -43,7 +79,7 @@
 				</div>
 			</div>
 		</div> <!-- container-fluid -->
-		<div class="top-slider">
+		<div class="owl-carousel top-slider">
 			<div class="slide-item">
 				<img src="img/kuril-islands-slide-01.jpg" alt="kuril islands" class="img-responsive img-width">
 				<div class="slide-text">
@@ -52,12 +88,20 @@
 				</div>
 			</div>
 			<!-- /.slide-item -->
+			<div class="slide-item">
+				<img src="img/kuril-islands-slide-02.jpg" alt="kuril islands" class="img-responsive img-width">
+				<div class="slide-text">
+					<div class="slide-date">30 September 2016</div>
+					<div class="slide-name">Next Slide</div>
+				</div>
+			</div>
+			<!-- /.slide-item -->
 		</div>
 	</header>
 	<main>
 		<div class="container">
 			<div class="row">
-				<div class="col-12">
+				<div class="col-lg-6 offset-lg-3">
 					<article>
 						<h2>The Kuril Islands or Kurile Islands in Russia's Sakhalin Oblast region, form a volcanic archipelago that stretches approximately 1,300 km (810 mi) northeast from Hokkaido, Japan, to Kamchatka, Russia, separating the Sea of Okhotsk from the North Pacific Ocean</h2>
 						<p>All the islands are currently under Russian jurisdiction. Japan claims the two southernmost large islands (Iturup and Kunashir) as part of its territory, as well as Shikotan and the Habomai islets, which has led to the ongoing Kuril Islands dispute. The disputed islands are known in Japan as the country's "Northern Territories"</p>
@@ -71,57 +115,143 @@
 						</blockquote>
 						<h3>List of main islands</h3>
 						<p>While in Russian sources the islands are mentioned for the first time in 1646, the earliest detailed information about them was provided by the explorer Vladimir Atlasov in 1697.</p>
-						<table>
-							<tr>
-								<th>Island</th>
-								<th>Landing point</th>
-								<th>Other Cities</th>
-								<th>Area (km2)</th>
-								<th>Population</th>
-							</tr>
-							<tr>
-								<td>Shumshu</td>
-								<td>Baikovo</td>
-								<td></td>
-								<td>388.0</td>
-								<td>20</td>
-							</tr>
-							<tr>
-								<td>Makanrushi</td>
-								<td>Zakat</td>
-								<td></td>
-								<td>50.0</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>Onekotan</td>
-								<td>Mussel</td>
-								<td>Kuroisi, Nemo</td>
-								<td>425.0</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>Matua</td>
-								<td>Sarychevo</td>
-								<td></td>
-								<td>52.0</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>Ushishir</td>
-								<td>Kraternya</td>
-								<td>Ryponkicha</td>
-								<td>5.0</td>
-								<td>0</td>
-							</tr>
-						</table>
+						<div class="table-holder">
+							<table>
+								<thead>
+									<tr>
+										<th>Island</th>
+										<th>Landing point</th>
+										<th>Other Cities</th>
+										<th>Area (km2)</th>
+										<th>Population</th>
+									</tr>
+								</thead>
+								<tbody>
+										<tr>
+										<td>Shumshu</td>
+										<td>Baikovo</td>
+										<td></td>
+										<td>388.0</td>
+										<td>20</td>
+									</tr>
+									<tr>
+										<td>Makanrushi</td>
+										<td>Zakat</td>
+										<td></td>
+										<td>50.0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>Onekotan</td>
+										<td>Mussel</td>
+										<td>Kuroisi, Nemo</td>
+										<td>425.0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>Matua</td>
+										<td>Sarychevo</td>
+										<td></td>
+										<td>52.0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>Ushishir</td>
+										<td>Kraternya</td>
+										<td>Ryponkicha</td>
+										<td>5.0</td>
+										<td>0</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 						<p>In the 18th and early 19th centuries, the Kuril Islands were explored by Danila Antsiferov, I. Kozyrevsky, Ivan Yevreinov, Fyodor Luzhin, Martin Shpanberg, Adam Johann von Krusenstern, Vasily Golovnin, and Henry James Snow.</p>
 					</div>
 				</article>
 			</div>
 		</div>
 	</main>
-
+	<div class="lastest-posts">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="last-post-head">Latest Posts</div>
+				</div>
+				<div class="col-md-4">
+					<div class="last-post-item d-flex">
+						<div class="img-thumb">
+							<a href="#"><img src="img/post-thumb-01.jpg" alt="Wine Vacation" class="img-responsive"></a>
+						</div>
+						<div class="text-thumb d-flex">
+							<div class="post-category">travel</div>
+							<div class="post-title">
+								Planning the South African Wine Vacation of Your Dreams Got Easier
+							</div>
+							<a href="#" class="more">read more <span class="icon-arrow icon"></span></a>
+						</div>
+					</div> <!-- last-post-item -->
+				</div>
+				<div class="col-md-4">
+					<div class="last-post-item d-flex">
+						<div class="img-thumb">
+							<a href="#"><img src="img/post-thumb-02.jpg" alt="Wine Vacation" class="img-responsive"></a>
+						</div>
+						<div class="text-thumb d-flex">
+							<div class="post-category">travel</div>
+							<div class="post-title">
+								Planning the South African Wine Vacation of Your Dreams Got Easier
+							</div>
+							<a href="#" class="more">read more <span class="icon-arrow icon"></span></a>
+						</div>
+					</div> <!-- last-post-item -->
+				</div>
+				<div class="col-md-4">
+					<div class="last-post-item d-flex">
+						<div class="img-thumb">
+							<a href="#"><img src="img/post-thumb-03.jpg" alt="Wine Vacation" class="img-responsive"></a>
+						</div>
+						<div class="text-thumb d-flex">
+							<div class="post-category">travel</div>
+							<div class="post-title">
+								Planning the South African Wine Vacation of Your Dreams Got Easier
+							</div>
+							<a href="#" class="more">read more <span class="icon-arrow icon"></span></a>
+						</div>
+					</div> <!-- last-post-item -->
+				</div>
+			</div>
+		</div>
+	</div> <!-- lastest-posts -->
+	<footer class="footer">
+		<div class="container-fluid">
+			<div class="row footer-top">
+				<div class="col-lg-auto">
+					<nav class="footer-nav">
+						<div class="nav-list">
+							<ul>
+								<li><a href="#">About</a></li>
+								<li><a href="#">Guides</a></li>
+								<li><a href="#">community</a></li>
+								<li><a href="#">resources</a></li>
+								<li><a href="#">Contact us</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+				<div class="col-lg-auto">
+					<div class="social">
+						<a href="#" class="social-link icon icon-facebook"></a>
+						<a href="#" class="social-link icon icon-houzz"></a>
+						<a href="#" class="social-link icon icon-twitter"></a>
+						<a href="#" class="social-link icon icon-instagram"></a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col"><div class="copyright">Copyright © 2017 TestPage. All rights reserved.</div></div>
+			</div>
+		</div>
+	</footer>
 	<script src="js/scripts.min.js"></script>
 
 </body>
